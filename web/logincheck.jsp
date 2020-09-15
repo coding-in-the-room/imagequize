@@ -38,9 +38,8 @@
 
         if(rs.getString("cnt").equals("1"))
         {
-            out.print("로그인성공o");
             session.setAttribute("id",id); //세션으로 id값 전달.
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.jsp"); //index로 보냄.
 
         }
         else

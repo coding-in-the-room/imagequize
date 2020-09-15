@@ -11,7 +11,7 @@
   </head>
   <body>
   <% if(session.getAttribute("id") == null) {
-    response.sendRedirect("login.jsp");
+    response.sendRedirect("login.jsp");   //세션 확인.
 }%>
     <center>
     <br><br><br><br>

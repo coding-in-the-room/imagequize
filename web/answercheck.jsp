@@ -1,3 +1,21 @@
+
+
+
+
+
+
+<%
+
+
+//#####################################
+//
+//          정답 확인 페이지
+//
+//#####################################
+
+
+%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <html>
@@ -8,16 +26,17 @@
 </head>
 
 <body>
-  <% if(session.getAttribute("id") == null) {
+  <% if(session.getAttribute("id") == null) {  //세션확인.
     response.sendRedirect("login.jsp");
 }
 %>
 <%@ page import = "java.sql.*, java.util.*" %>
 <%
-    String answer = request.getParameter("answer");
-    String userinput = request.getParameter("userinput");
-    String id = (String)session.getAttribute("id");
-if(answer.equals(userinput)){
+    String answer = request.getParameter("answer"); //정답.
+    String userinput = request.getParameter("userinput"); //사용자 입력값.
+    String id = (String)session.getAttribute("id"); //세션에서 아이디 가져옴.
+
+if(answer.equals(userinput)){ // 정답 맞췄을 때
     
 
     
@@ -26,7 +45,7 @@ if(answer.equals(userinput)){
     PreparedStatement pstmt = null;
     try {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
-        pstmt = conn.prepareStatement("update userinfo set score = score +1 where id='"+id+"'" );
+        pstmt = conn.prepareStatement("update userinfo set score = score +1 where id='"+id+"'" ); // 스코어 +1시킴.
         
         pstmt.executeUpdate(); //쿼리 Excute. 실제 쿼리 실행부분
 %>

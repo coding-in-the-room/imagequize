@@ -10,7 +10,7 @@
     <script src="fun.js" charset="UTF-8"></script>
   </head>
   <body >
-    <% if(session.getAttribute("id") == null) {
+    <% if(session.getAttribute("id") == null) { //세션 확인
     response.sendRedirect("login.jsp");
 }%>
     <center>
@@ -214,7 +214,7 @@
 <div>
 <center>
 
-<div style="width: 500px; height: 100px; margin-left: 10%;">
+<div style="width: 500px; height: 100px; margin-left: 10%;"> <!-- 붓 크기 설정 -->
   <div class="size" style="width: 40px; height: 40px; margin: 10px 10px 10px 10px; "onclick="size(40)"></div>
   <div class="size" style="width: 30px; height: 30px; margin: 14px 12px 12px 12px; "onclick="size(25)"></div>
   <div class="size" style="width: 25px; height: 25px; margin: 18px 14px 14px 14px; "onclick="size(15)"></div>
@@ -226,7 +226,7 @@
 
         <br></center>
         <form action="send.jsp" method="post" id="frm" name="frm">
-        <input type="hidden" id="ss" name="ss" value="0000">
+        <input type="hidden" id="ss" name="ss" value="null"> <!-- image Base64값 담을 공간 -->
         <br>
         <center>
 
