@@ -9,7 +9,6 @@
 </head>
 <body>
 <%@ page import = "java.sql.*, java.util.*" %>
-<%@ page import="example.*" %>
 <%
 
 String id = request.getParameter("id");
