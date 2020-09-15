@@ -8,6 +8,11 @@
 
 다음 문제 이동(viewquize.jsp) 및 해당 계정 스코어 +1;
 
+# DB Structure
+
+imagedata [id(varchar(30)),src(longtext),num(int),answer(varchar(30))]
+userinfo [id(varchar(30)),pw(varchar(30)),score(int)] pw는 보안 적용 전 입니다.
+
 # Update Log
 
 #### 2020-09-15 첫 업로드
