@@ -16,3 +16,9 @@ userinfo [id(varchar(30)),pw(varchar(30)),score(int)] pw는 보안 적용 전 �
 # Update Log
 
 #### 2020-09-15 첫 업로드
+
+#### 2020-09-16
+
+- 이미지저장방식 변경(Base64 → PNG로 저장.)
+- 내 스코어 표시.
+- 모바일 문제 제작 404페이지 제작(모바일에서 Canvas작동X).

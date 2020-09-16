@@ -30,7 +30,7 @@
     Date now = new Date();
     SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddhhmmss");
     String filename = sf.format(now)+id+".png";
-    Savefile.img.decodeStringtoFile(url.substring(22),"tomcat/webapps/c/img/"+filename);
+    Savefile.img.decodeStringtoFile(url.substring(22),"tomcat/webapps/img/"+filename);
 
 
   Class.forName("com.mysql.jdbc.Driver");

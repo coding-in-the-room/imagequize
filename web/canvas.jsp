@@ -227,7 +227,7 @@
         <br></center>
         <form action="send.jsp" method="post" id="frm" name="frm">
         <input type="hidden" id="ss" name="ss" value="null"> <!-- image Base64값 담을 공간 -->
-        <br>
+        
         <center>
 
 
@@ -266,9 +266,10 @@
 
 
         
-        <button  style="margin-left: 10px" onclick="save()">SAVE</button>
+         
+       <button  style="margin-left: 20px" onclick="save()">SAVE</button>
        </center>
-        </form>
+        </form><button onclick="movehome()">홈으로</button>
       </div>
     </div>
     
@@ -313,5 +314,7 @@ else return false;
 	
 }
 
-
+function movehome() {
+  location.href = "index.jsp";
+}
 </script>
