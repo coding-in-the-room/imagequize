@@ -29,8 +29,8 @@
     Savefile s = new Savefile();
     Date now = new Date();
     SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddhhmmss");
-    String filename = sf.format(now)+id+"png";
-    Savefile.img.decodeStringtoFile(url.substring(22),filename);
+    String filename = sf.format(now)+id+".png";
+    Savefile.img.decodeStringtoFile(url.substring(22),"tomcat/webapps/img/"+filename);
 
 
   Class.forName("com.mysql.jdbc.Driver");
@@ -40,7 +40,7 @@
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
         pstmt = conn.prepareStatement("insert into imagedata (id,src,answer) values(?,?,?) ");
         pstmt.setString(1, id);
-        pstmt.setString(2, url);
+        pstmt.setString(2, filename);
         pstmt.setString(3,answer);
         pstmt.executeUpdate(); //쿼리 Excute. 실제 쿼리 실행부분
 

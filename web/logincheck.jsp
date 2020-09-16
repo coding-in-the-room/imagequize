@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="example.*" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="Func.Sha" %>
 <html>
 <head>
     <title>logincheck</title>
@@ -17,7 +18,8 @@
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
-
+    Sha sha = new Sha();
+    pw = sha.sha256(pw);
     String dbid = "alpacao";
     String dbpw = "alpaca16";
     String dbname = "alpacao";

@@ -9,11 +9,13 @@
 </head>
 <body>
 <%@ page import = "java.sql.*, java.util.*" %>
+<%@ page import="Func.Sha" %>
 <%
 
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
-
+Sha sha = new Sha();
+ pw = sha.sha256(pw);
 if(id.length()>5 && id.length()<20){
 
     Class.forName("com.mysql.jdbc.Driver");
