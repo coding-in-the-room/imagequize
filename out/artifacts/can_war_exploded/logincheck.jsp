@@ -21,7 +21,7 @@
     String dbid = "alpacao";
     String dbpw = "alpaca16";
     String dbname = "alpacao";
-    String tablename = "apiuser";
+    String tablename = "userinfo";
 
     Connection conn = null;
     ResultSet rs = null;
@@ -38,9 +38,8 @@
 
         if(rs.getString("cnt").equals("1"))
         {
-            out.print("로그인성공o");
             session.setAttribute("id",id); //세션으로 id값 전달.
-            response.sendRedirect("canvas.jsp");
+            response.sendRedirect("index.jsp"); //index로 보냄.
 
         }
         else
@@ -48,7 +47,7 @@
 %>
 <script>
     alert("로그인에 실패하였습니다.");
-    location.href="http://alpacao.cafe24.com/can/login.jsp"; // 로그인페이지로 이동시킴
+    location.href="login.jsp"; // 로그인페이지로 이동시킴
 </script>
 <%
         }

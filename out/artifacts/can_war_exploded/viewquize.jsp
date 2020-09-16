@@ -28,7 +28,6 @@
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
         String sql = "select * from imagedata order by rand() limit 1";   //문제들을 랜덤순서로 표시하고 그중 1개만 가져와서 출력.
-      
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         rs.next();
@@ -49,7 +48,7 @@
 
 
     <center>
-      <img src="<%out.print("img/"+src);%>" />
+      <img src="<%out.print(src);%>" />
 
       <form action="answercheck.jsp">
         <div

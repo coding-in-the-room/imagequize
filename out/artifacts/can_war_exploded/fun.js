@@ -4,15 +4,18 @@ var pos = {
   y: -1,
 };
 var canvas, ctx, count;
-count = 1;
+window.onload = function () {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
 
+  canvas.addEventListener("mousedown", li);
+  canvas.addEventListener("mousemove", li);
+  canvas.addEventListener("mouseup", li);
+  canvas.addEventListener("mouseout", li);
+};
 function li(event) {
   switch (event.type) {
     case "mousedown":
-      //   if (count > 5) {
-      //     alert("5획이상 그을 수 없습니다.");
-      //    break;
-      //    }
       initDraw(event);
       count++;
       break;
@@ -57,56 +60,38 @@ function getPosition(event) {
   return { X: x, Y: y };
 }
 
-function pink() {
-  ctx.strokeStyle = "#fc00e6";
+function pencolor(c) {
+  ctx.strokeStyle = c;
   ctx.stroke;
-  console.log("pink");
+}
+//채우기
+
+function fill(color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(0, 0, 1000, 700);
 }
 
-function yellow() {
-  console.log("yellow");
-  ctx.strokeStyle = "#ffff00";
-  ctx.stroke;
-}
-function black() {
-  ctx.strokeStyle = "#000000";
-  ctx.stroke;
-}
-function red() {
-  ctx.strokeStyle = "#fc0303";
-  ctx.stroke;
-}
-function green() {
-  ctx.strokeStyle = "#059e05";
-  ctx.stroke;
-}
-function brown() {
-  ctx.strokeStyle = "#995900";
-  ctx.stroke;
-}
-function blue() {
-  ctx.strokeStyle = "#003cff";
-  ctx.stroke;
-}
-function sky() {
-  ctx.strokeStyle = "#6bc6ff";
-  ctx.stroke;
-}
-function purple() {
-  ctx.strokeStyle = "#8000db";
-  ctx.stroke;
-}
-function white() {
-  ctx.strokeStyle = "#FFFFFF";
+function size(s) {
+  ctx.lineWidth = s;
   ctx.stroke;
 }
 
+/* Reset Canvas.
 function clearboard() {
   ctx.clearRect(0, 0, 1000, 700);
 }
+*/
 
 function save() {
-  var c = document.getElementById("canvas");
-  var url = c.toDataURL();
-  console.log(url);
+  var answercheck = document.getElementById("answer").value;
+  if (answercheck == "") alert("정답을 입력해주세요");
+  else {
+    var url = canvas.toDataURL();
+    //console.log(url);
+
+    document.getElementById("ss").value = url;
+    console.log("*");
+    var form = document.getElementById("frm");
+    form.submit();
+  }
 }

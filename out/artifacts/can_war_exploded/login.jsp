@@ -3,18 +3,24 @@
 <html>
 <head>
     <title>$Title$</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css" type="text/css">
 </head>
 <body>
 <%
     if(session!=null) session.invalidate(); //뒤로가기로 로그인페이지 가는것 방지.
 %>
-<form action="logincheck.jsp" method="GET">
-    <input type="text" name = "id"> <br>
-    <input type="password" name = "pw"> <br>
+<center>
+
+<form action="logincheck.jsp" method="GET" style="margin-top:20%;">
+
+    <input type="text" class="form-control" name = "id" style="width: 300px;" placeholder="Insert ID"> <br>
+    <input type="password" class="form-control" name = "pw" style="width: 300px;" placeholder="Insert PW"> <br>
     <input type="submit">
 </form>
-<a href="register.jsp">회원가입</a>
-
+<a href="register.html">회원가입</a>
+</center>
 
 </body>
 </html>
+

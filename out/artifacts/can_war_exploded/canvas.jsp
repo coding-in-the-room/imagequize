@@ -1,161 +1,317 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 2020-09-11
-  Time: 오후 4:32
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<% if(session.getAttribute("id") == null) {
-    response.sendRedirect("");}
-%>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="css.css" type="text/css">
+    <script src="fun.js" charset="UTF-8"></script>
+  </head>
+  <body >
+    <% if(session.getAttribute("id") == null) { //세션 확인
+    response.sendRedirect("login.jsp");
+}%>
+    <center>
+    <div style="width:100%;">
+      <div style="border: 1px solid; width: 1000px; height: 700px; ">
+        <canvas
+          name="canvas"
+          id="canvas"
+          width="1000px"
+          height="700px"
+        ></canvas>
+      </div>
 
 
 
-<body>
-<%
-String id = (String)session.getAttribute("id");
-out.print(id);
-%>
+
+    </div>
+    </center>
+
+    <div>
+      <div style="background-color: aquamarine; width: 100%; height: 200px; padding-top:20px;">
+
+        <div
+  style="
+    margin-left: 30%;
+    height: 30px;
+    width: 100px;
+    float: left;
+  "
+>그리기 도구</div>
+        <div
+          class="jb"
+          style="
+            background-color: #ffc0cb;
+          "
+          onclick="pencolor('#ffc0cb')"
+        ></div>
+
+        <div
+          class="jb"
+          style="
+            background-color: #ffff00;
+          "
+          onclick="pencolor('#ffff00')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: black;
+          "
+          onclick="pencolor('#000000')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: red;
+            
+          "
+          onclick="pencolor('rgb(255,0,0)')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #059e05;
+            
+          "
+          onclick="pencolor('#059e05')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #995900;
+            
+          "
+          onclick="pencolor('#995900')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #003cff;
+           
+          "
+          onclick="pencolor('#003cff')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #6bc6ff;
+            
+          "
+          onclick="pencolor('#6bc6ff')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #8000db;
+            
+          "
+          onclick="pencolor('#8000db')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #ffffff;
+            
+          "
+          onclick="pencolor('#ffffff')"
+        ></div>
+      
+        <br>
+        <br>
+       
+ <div
+  style="
+    margin-left: 30%;
+    height: 30px;
+    width: 100px;
+    float: left;
+  "
+>채우기 도구</div>
+        <div
+          class="jb"
+          style="
+            background-color: #ffc0cb;
+          "
+          onclick="fill('#ffc0cb')"
+        ></div>
+
+        <div
+          class="jb"
+          style="
+            background-color: #ffff00;
+          "
+          onclick="fill('#ffff00')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: black;
+          "
+          onclick="fill('#000000')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: red;
+            
+          "
+          onclick="fill('rgb(255,0,0)')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #059e05;
+            
+          "
+          onclick="fill('#059e05')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #995900;
+            
+          "
+          onclick="fill('#995900')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #003cff;
+           
+          "
+          onclick="fill('#003cff')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #6bc6ff;
+            
+          "
+          onclick="fill('#6bc6ff')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #8000db;
+            
+          "
+          onclick="fill('#8000db')"
+        ></div>
+        <div
+          class="jb"
+          style="
+            background-color: #ffffff;
+            
+          "
+          onclick="fill('#ffffff')"
+        ></div>
+<br>
+<br>
+<div>
+<center>
+
+<div style="width: 500px; height: 100px; margin-left: 10%;"> <!-- 붓 크기 설정 -->
+  <div class="size" style="width: 40px; height: 40px; margin: 10px 10px 10px 10px; "onclick="size(40)"></div>
+  <div class="size" style="width: 30px; height: 30px; margin: 14px 12px 12px 12px; "onclick="size(25)"></div>
+  <div class="size" style="width: 25px; height: 25px; margin: 18px 14px 14px 14px; "onclick="size(15)"></div>
+  <div class="size" style="width: 15px; height: 15px; margin: 22px 16px 16px 16px; "onclick="size(10)"></div>
+  <div class="size" style="width: 10px; height: 10px; margin: 26px 18px 18px 18px; "onclick="size(5)"></div>
+</div>
 
 <div>
-    <div style="background-color: aquamarine; width: 100%; height: 100px">
-        <div
-                class="color-pink"
-                style="
-            margin-left: 40%;
-            background-color: #ffc0cb;
-            height: 30px;
-            width: 30px;
-            float: left;
-          "
-                onclick="pink()"
-        ></div>
 
-        <div
-                class="color-yellow"
-                style="
-            background-color: #ffff00;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="yellow()"
-        ></div>
-        <div
-                class="color-black"
-                style="
-            background-color: black;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="black()"
-        ></div>
-        <div
-                class="color-red"
-                style="
-            background-color: red;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="red()"
-        ></div>
-        <div
-                class="color-green"
-                style="
-            background-color: #059e05;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="green()"
-        ></div>
-        <div
-                class="color-brown"
-                style="
-            background-color: #995900;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="brown()"
-        ></div>
-        <div
-                class="color-blue"
-                style="
-            background-color: #003cff;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="blue()"
-        ></div>
-        <div
-                class="color-sky"
-                style="
-            background-color: #6bc6ff;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="sky()"
-        ></div>
-        <div
-                class="color-purple"
-                style="
-            background-color: #8000db;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="purple()"
-        ></div>
-        <div
-                class="color-white"
-                style="
-            background-color: #ffffff;
-            height: 30px;
-            width: 30px;
-            float: left;
-            margin-left: 10px;
-          "
-                onclick="white()"
-        ></div>
+        <br></center>
+        <form action="send.jsp" method="post" id="frm" name="frm">
+        <input type="hidden" id="ss" name="ss" value="null"> <!-- image Base64값 담을 공간 -->
+        <br>
+        <center>
 
-        <button style="margin-left: 10px" onclick="clearboard()">초기화</button>
-        <button style="margin-left: 10px" onclick="save()">저장</button>
-        <input type="submit">
+
+<div
+          style="
+            width: 400px;
+            height: 40px;
+            background-color: rgb(36, 131, 255);
+          "
+        >
+          <div
+            style="
+              float: left;
+              width: 390px;
+              height: 30px;
+              margin-top: 5px;
+              margin-left: 5px;
+              background-color: #ffffff;
+            "
+          >
+         
+            <input 
+              type="text"
+              style="width: 390px; height: 30px; border: none; outline: none"
+              name="answer"
+              id="answer"
+              type="text"
+              autocomplete="off"
+              autofocus
+              placeholder="정답을 입력하세요."
+            />
+          </div>
+        </div>
+
+
+
+
+        
+        <button  style="margin-left: 10px" onclick="save()">SAVE</button>
+       </center>
+        </form>
+      </div>
     </div>
-</div>
-</body>
+    
+  </body>
 </html>
-<script>
-window.onload = function () {
-  canvas = document.getElementById("canvas");
-  ctx = canvas.getContext("2d");
 
-  canvas.addEventListener("mousedown", li);
-  canvas.addEventListener("mousemove", li);
-  canvas.addEventListener("mouseup", li);
-  canvas.addEventListener("mouseout", li);
-};
+
+<script> //엔터 키 막기.
+  window.addEventListener("keydown",function(event){
+    if(event.defaultPrevented){
+      return;
+    }
+    var handled = false;
+    if(event.keyCode == 13) {
+      handled = true;
+      console.log("enter");
+    }
+    if(handled) {
+      event.preventDefault();
+    }
+
+  },true)
+</script>
+
+<script type="text/javascript">
+
+
+if(isMobile()){
+
+	location.href = "mobile404.html";	//모바일일때 보낼 페이지
+
+}
+
+
+function isMobile(){ //모바일 접속인지 확인.
+	var UserAgent = navigator.userAgent;
+
+	if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+    return true;
+    
+else return false;
+	
+}
+
 
 </script>
-<script src="fun.js"></script>
