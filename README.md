@@ -11,7 +11,8 @@
 # DB Structure
 
 imagedata [id(varchar(30)),src(longtext),num(int),answer(varchar(30))]
-userinfo [id(varchar(30)),pw(varchar(30)),score(int)] pw는 보안 적용 전 입니다.
+userinfo [id(varchar(30)),pw(varchar(30)),score(int)]
+quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(varchar(30)),result(varchar(4)),time(datetime)]
 
 # Update Log
 
@@ -24,3 +25,7 @@ userinfo [id(varchar(30)),pw(varchar(30)),score(int)] pw는 보안 적용 전 �
 - 모바일 문제 제작 404페이지 제작(모바일에서 Canvas작동X).
 - 로그인 및 회원가입시 패스워드에 SHA256 암호화 적용.
 - 회원가입 아이디 중복 검사 적용.
+
+#### 2020-09-16
+
+- 문제 제출시 로그 남기도록 수정 [문제번호,아이디,퀴즈번호,입력값,정답,결과,시간]

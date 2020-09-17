@@ -85,6 +85,7 @@
             "
           >
           <input type="hidden" name="answer" id="answer" value="<%out.print(answer);%>">
+          <input type="hidden" name="num" id="num" value="<%out.print(num);%>">
             <input 
               type="text"
               style="width: 390px; height: 30px; border: none; outline: none"
