@@ -35,16 +35,26 @@
     String answer = request.getParameter("answer"); //정답.
     String userinput = request.getParameter("userinput"); //사용자 입력값.
     String id = (String)session.getAttribute("id"); //세션에서 아이디 가져옴.
+    String quizenum = request.getParameter("num");
+   // String result = "X";
 
-if(answer.equals(userinput)){ // 정답 맞췄을 때
     
 
-    
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = null;
     PreparedStatement pstmt = null;
+    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
+    if(answer.equals(userinput)) result = "O"; //문제 결과 맞으면 O
+    else result = "X"; //문제 결과 틀리면 X
+    pstmt = conn.prepareStatement("insert into quizelog (id,quizenum,userinput,answer,result,time) values ('"+id+"','"+quizenum+"','"+userinput+"','"+answer+"','"+result+"',now())"); // 퀴즈 풀었을때 로그 처리.
+       
+    pstmt.executeUpdate(); //쿼리 Excute. 실제 쿼리 실행부분
+
+
+if(answer.equals(userinput)){ // 정답 맞췄을 때
+
     try {
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
+        
         pstmt = conn.prepareStatement("update userinfo set score = score +1 where id='"+id+"'" ); // 스코어 +1시킴.
         
         pstmt.executeUpdate(); //쿼리 Excute. 실제 쿼리 실행부분
@@ -74,9 +84,9 @@ if(answer.equals(userinput)){ // 정답 맞췄을 때
             } catch (Exception e) {
                 out.print(e);
             }
-       
+
         //자원 반환 및 에러처리
-  
+
     }
 
 

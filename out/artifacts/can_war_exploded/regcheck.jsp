@@ -61,7 +61,7 @@ location.href="login.jsp"; // 로그인페이지로 이동시킴
 else if(ok.equals("NO")){
 %>
 <script>alert("사용할 수 없는 아이디입니다.");
-location.href="regcheck.html";
+location.href="register.html";
 </script>
 <%
     }

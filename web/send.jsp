@@ -20,18 +20,14 @@
     request.setCharacterEncoding("UTF-8");
     String url = request.getParameter("ss");
     String answer = request.getParameter("answer");
-    //.substring(22);
-    
-    //out.print(url);
     String id = (String)session.getAttribute("id");
-   // out.print(id);
+   
 
     Savefile s = new Savefile();
     Date now = new Date();
     SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddhhmmss");
     String filename = sf.format(now)+id+".png";
     Savefile.img.decodeStringtoFile(url.substring(22),"tomcat/webapps/img/"+filename);
-
 
   Class.forName("com.mysql.jdbc.Driver");
     Connection conn = null;
@@ -49,7 +45,6 @@
     alert("문제를 제출했어요!!!")
     location.href="index.jsp"
     </script>
-
 
         <%
 

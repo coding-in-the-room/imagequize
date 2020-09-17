@@ -4,7 +4,7 @@
 
 회원가입(register.html) → 회원가입 유효성 검사(regcheck.jsp) → 로그인(login.jsp) → 로그인 유효성 검사(logincheck.jsp) →
 
-인덱스페이지(index.jsp) → 문제 제작(canvas.jsp) → 문제 제출(send.jsp) → 문제 풀기(viewquize.jsp) → 문제 정답 여부 확인(answercheck.jsp) →
+인덱스페이지(index.jsp) → 문제 제작(canvas.jsp) → 문제 제출(send.jsp) → 문제 풀기(viewquize.jsp) → 로그 제출 → 문제 정답 여부 확인(answercheck.jsp) →
 
 다음 문제 이동(viewquize.jsp) 및 해당 계정 스코어 +1;
 
@@ -18,6 +18,11 @@ quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(v
 
 #### 2020-09-15 첫 업로드
 
+- 로그인 기능 구현.
+- 회원가입 기능 구현.
+- Canvas로 이미지 문제 제작 구현.
+- 문제 맞추기 페이지 구현.
+
 #### 2020-09-16
 
 - 이미지저장방식 변경(Base64 → PNG로 저장.)
@@ -28,4 +33,6 @@ quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(v
 
 #### 2020-09-16
 
-- 문제 제출시 로그 남기도록 수정 [문제번호,아이디,퀴즈번호,입력값,정답,결과,시간]
+- 문제 제출시 로그 남기도록 수정 [문제번호,아이디,퀴즈번호,입력값,정답여부,결과,시간]
+- 패스워드 저장방식 변경 기존SHA256 인코딩 → SHA 인코딩 후 문자열 SubString(3,15)
+-

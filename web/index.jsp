@@ -48,7 +48,7 @@
         
         
         
-        sql = "select * from userinfo where id = '"+id+"'";
+        sql = "select * from userinfo where id = '"+session.getAttribute("id")+"'";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         rs.next();
@@ -89,6 +89,17 @@
         현재 내 스코어: <%out.print("  " + score);%>
       </button>
       <br><br><br><br>
+        <button
+        style="width: 500px; height: 150px;   "
+        onclick="shop()"
+      >
+        상점
+      </button>
+    
+    <br>
+    <br>
+     <br>
+    <br>
       <button
         style="width: 500px; height: 150px;   "
         onclick="logout()"
@@ -112,5 +123,8 @@
 
   function logout() {
     location.href = "logout.jsp";
+  }
+  function shop() {
+    location.href = "shop.jsp";
   }
 </script>

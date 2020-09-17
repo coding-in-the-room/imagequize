@@ -47,7 +47,7 @@
         answer = rs.getString("answer");
         
         
-        sql = "select * from userinfo where id = '"+id+"'";
+        sql = "select * from userinfo where id = '"+session.getAttribute("id")+"'";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         rs.next();

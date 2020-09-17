@@ -40,7 +40,6 @@
 
     
 
-    
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -50,6 +49,7 @@
     pstmt = conn.prepareStatement("insert into quizelog (id,quizenum,userinput,answer,result,time) values ('"+id+"','"+quizenum+"','"+userinput+"','"+answer+"','"+result+"',now())"); // 퀴즈 풀었을때 로그 처리.
        
     pstmt.executeUpdate(); //쿼리 Excute. 실제 쿼리 실행부분
+
 
 if(answer.equals(userinput)){ // 정답 맞췄을 때
 
@@ -84,9 +84,9 @@ if(answer.equals(userinput)){ // 정답 맞췄을 때
             } catch (Exception e) {
                 out.print(e);
             }
-       
+
         //자원 반환 및 에러처리
-  
+
     }
 
 
