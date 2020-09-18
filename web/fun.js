@@ -39,6 +39,7 @@ function li(event) {
       break;
 
     case "mouseout":
+
     case "mouseup":
       finishDraw();
       break;
@@ -61,9 +62,9 @@ function draw(event) {
   pos.Y = coors.Y;
   ctx.stroke();
 }
-
+var recent;
 function savetmp() {
-  var recent = document.getElementById("canvas").toDataURL();
+  recent = document.getElementById("canvas").toDataURL();
   stack.push(recent);
 }
 
@@ -84,6 +85,7 @@ function finishDraw() {
   pos.drawable = false;
   pos.X = -1;
   pos.Y = -1;
+  savetmp();
 }
 
 function getPosition(event) {
