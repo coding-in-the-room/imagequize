@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        
             <link rel="stylesheet" href="css.css" type="text/css">
+                <link href="color-picker.min.css" rel="stylesheet" />
+    <script src="color-picker.min.js"></script>
     <script src="fun.js" charset="UTF-8"></script>
   </head>
   <body >
@@ -33,182 +35,53 @@
     <div>
       <div style="background-color: aquamarine; width: 100%; height: 200px; padding-top:20px;">
 
-        <div
-  style="
-    margin-left: 30%;
-    height: 30px;
-    width: 100px;
-    float: left;
-  "
->그리기 도구</div>
-        <div
-          class="jb"
-          style="
-            background-color: #ffc0cb;
-          "
-          onclick="pencolor('#ffc0cb')"
-        ></div>
+     
+<center>
+<div>
+펜 색상 <br>
+<input type="text" id="co" name="co" value="#000000" />
 
-        <div
-          class="jb"
-          style="
-            background-color: #ffff00;
-          "
-          onclick="pencolor('#ffff00')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: black;
-          "
-          onclick="pencolor('#000000')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: red;
-            
-          "
-          onclick="pencolor('rgb(255,0,0)')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #059e05;
-            
-          "
-          onclick="pencolor('#059e05')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #995900;
-            
-          "
-          onclick="pencolor('#995900')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #003cff;
-           
-          "
-          onclick="pencolor('#003cff')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #6bc6ff;
-            
-          "
-          onclick="pencolor('#6bc6ff')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #8000db;
-            
-          "
-          onclick="pencolor('#8000db')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #ffffff;
-            
-          "
-          onclick="pencolor('#ffffff')"
-        ></div>
-      
+<br>
+채우기 색상 <br>
+<div style="float:left; margin-left:30%">
+      <div class="out">
+        <div class="in" onclick="fill('rgb(255, 255, 255)')" style="background-color: rgb(255, 255, 255)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(0, 0, 0)')" style="background-color:  rgb(0, 0, 0)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(5, 201, 71)')" style="background-color: rgb(5, 201, 71)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(38, 0, 255)')" style="background-color: rgb(38, 0, 255)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(255, 0, 234)')" style="background-color: rgb(255, 0, 234)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(255, 0, 128)')" style="background-color: rgb(255, 0, 128)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(255, 0, 0)')" style="background-color: rgb(255, 0, 0)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(255, 251, 13)')" style="background-color: rgb(255, 251, 13)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(3, 213, 250)')" style="background-color: rgb(3, 213, 250)"></div>
+      </div>
+      <div class="out">
+        <div class="in" onclick="fill('rgb(255, 255, 255)')" style="background-color: rgb(153, 0, 255)"></div>
+      </div>
+    </div>
+
+</div>
+
+
         <br>
         <br>
        
- <div
-  style="
-    margin-left: 30%;
-    height: 30px;
-    width: 100px;
-    float: left;
-  "
->채우기 도구</div>
-        <div
-          class="jb"
-          style="
-            background-color: #ffc0cb;
-          "
-          onclick="fill('#ffc0cb')"
-        ></div>
-
-        <div
-          class="jb"
-          style="
-            background-color: #ffff00;
-          "
-          onclick="fill('#ffff00')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: black;
-          "
-          onclick="fill('#000000')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: red;
-            
-          "
-          onclick="fill('rgb(255,0,0)')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #059e05;
-            
-          "
-          onclick="fill('#059e05')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #995900;
-            
-          "
-          onclick="fill('#995900')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #003cff;
-           
-          "
-          onclick="fill('#003cff')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #6bc6ff;
-            
-          "
-          onclick="fill('#6bc6ff')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #8000db;
-            
-          "
-          onclick="fill('#8000db')"
-        ></div>
-        <div
-          class="jb"
-          style="
-            background-color: #ffffff;
-            
-          "
-          onclick="fill('#ffffff')"
-        ></div>
 <br>
 <br>
 <div>
@@ -299,7 +172,7 @@
 <script type="text/javascript">
 
 
-if(isMobile()){
+if(isMobile()){ 
 
 	location.href = "mobile404.html";	//모바일일때 보낼 페이지
 
@@ -319,4 +192,34 @@ else return false;
 function movehome() {
   location.href = "index.jsp";
 }
+
+
+
+
+
+
+var picker = new CP(document.getElementById("co"));
+
+function onChange(r, g, b, a) {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  this.source.value = this.color(r, g, b, a);
+  ctx.strokeStyle = this.color(r, g, b, a);
+  ctx.stroke;
+}
+picker.on("change", onChange);
+
+var picker = new CP(document.getElementById("co"), {
+  color: "HEX", // color format
+  e: ["touchstart", "mousedown"], // events to show the color picker
+  parent: null, //parent element
+});
+
+
+
+
+
+
+
+
 </script>

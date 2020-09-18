@@ -36,6 +36,8 @@ quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(v
 - 문제 제출시 로그 남기도록 수정 [문제번호,아이디,퀴즈번호,입력값,정답여부,결과,시간]
 - 패스워드 저장방식 변경 기존SHA256 인코딩 → SHA 인코딩 후 문자열 SubString(3,15)
 
-#### 2020-09-17
+#### 2020-09-18
 
--Undo기능 추가(= 오류덩어리)
+- Undo기능 추가(= 오류덩어리)
+- 펜 ColorPicker 추가
+- 배경채우기 색상 및 UI 수정

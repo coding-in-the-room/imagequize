@@ -6,6 +6,23 @@
   margin-left: 13px;
 }
 
+.out {
+  border-radius: 40px 80px;
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin-left: 13px;
+  background-color: white;
+}
+.in {
+  border-radius: 40px 80px;
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+  float: left;
+}
+
 .size {
   float: left;
 
