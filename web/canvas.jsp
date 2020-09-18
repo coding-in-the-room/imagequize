@@ -220,6 +220,8 @@
   <div class="size" style="width: 25px; height: 25px; margin: 18px 14px 14px 14px; "onclick="size(15)"></div>
   <div class="size" style="width: 15px; height: 15px; margin: 22px 16px 16px 16px; "onclick="size(10)"></div>
   <div class="size" style="width: 10px; height: 10px; margin: 26px 18px 18px 18px; "onclick="size(5)"></div>
+  <div class="size" style="width: 8px; height: 8px; margin: 30px 30px 30px 30px; "onclick="size(3)"></div>
+  <div class="size" style="width: 6px; height: 6px; margin: 34px 34px 34px 34px; "onclick="size(1)"></div>
 </div>
 
 <div>
@@ -267,9 +269,9 @@
 
         
          
-       <button  style="margin-left: 20px" onclick="save()">SAVE</button>
+       <button  style="margin-left: 20px" onclick="save()">SAVE</button> 
        </center>
-        </form><button onclick="movehome()">홈으로</button>
+        </form><button onclick="movehome()">홈으로</button> <button onclick="undo()">UNDO</button>
       </div>
     </div>
     

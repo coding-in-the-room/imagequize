@@ -1,3 +1,17 @@
+class Stack {
+  //스택 구조 생성
+  constructor() {
+    this.store = [];
+  }
+  push(item) {
+    this.store.push(item);
+  }
+  pop() {
+    return this.store.pop();
+  }
+}
+const stack = new Stack(); //스택 사용
+
 var pos = {
   drawable: false,
   x: -1,
@@ -46,6 +60,24 @@ function draw(event) {
   pos.X = coors.X;
   pos.Y = coors.Y;
   ctx.stroke();
+}
+
+function savetmp() {
+  var recent = document.getElementById("canvas").toDataURL();
+  stack.push(recent);
+}
+
+function undo() {
+  var abd = document.getElementById("canvas");
+  var ccc = abd.getContext("2d");
+  var image = new Image();
+
+  image.onload = function () {
+    ccc.fillStyle = "#FFFFFF";
+    ccc.fillRect(0, 0, abd.width, abd.height);
+    ccc.drawImage(image, 0, 0);
+  };
+  image.src = stack.store.pop();
 }
 
 function finishDraw() {
