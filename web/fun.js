@@ -116,6 +116,13 @@ function clearboard() {
 }
 */
 
+function chsize(i) {
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  ctx.lineWidth = i;
+  ctx.stroke;
+}
+
 function save() {
   var answercheck = document.getElementById("answer").value;
   if (answercheck == "") alert("정답을 입력해주세요");

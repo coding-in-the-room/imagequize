@@ -39,7 +39,10 @@
 <center>
 <div>
 펜 색상 <br>
-<input type="text" id="co" name="co" value="#000000" />
+<input type="text" id="co" name="co" value="#000000" /> <br>
+펜 크기 <br>
+<input type="range" name="rangesize" id="rangesize" min="1" max="50" step="1" value="1" oninput="chsize(this.value)">
+
 
 <br>
 채우기 색상 <br>
@@ -87,15 +90,6 @@
 <div>
 <center>
 
-<div style="width: 500px; height: 100px; margin-left: 10%;"> <!-- 붓 크기 설정 -->
-  <div class="size" style="width: 40px; height: 40px; margin: 10px 10px 10px 10px; "onclick="size(40)"></div>
-  <div class="size" style="width: 30px; height: 30px; margin: 14px 12px 12px 12px; "onclick="size(25)"></div>
-  <div class="size" style="width: 25px; height: 25px; margin: 18px 14px 14px 14px; "onclick="size(15)"></div>
-  <div class="size" style="width: 15px; height: 15px; margin: 22px 16px 16px 16px; "onclick="size(10)"></div>
-  <div class="size" style="width: 10px; height: 10px; margin: 26px 18px 18px 18px; "onclick="size(5)"></div>
-  <div class="size" style="width: 8px; height: 8px; margin: 30px 30px 30px 30px; "onclick="size(3)"></div>
-  <div class="size" style="width: 6px; height: 6px; margin: 34px 34px 34px 34px; "onclick="size(1)"></div>
-</div>
 
 <div>
 
@@ -172,19 +166,20 @@
 <script type="text/javascript">
 
 
-if(isMobile()){ 
-
+if(isMobile()){  //모바일 체크
 	location.href = "mobile404.html";	//모바일일때 보낼 페이지
-
 }
 
 
-function isMobile(){ //모바일 접속인지 확인.
-	var UserAgent = navigator.userAgent;
 
+
+//#############################################################
+//                    모바일 체크 
+//#############################################################
+function isMobile(){ 
+	var UserAgent = navigator.userAgent;
 	if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
     return true;
-    
 else return false;
 	
 }
@@ -197,7 +192,9 @@ function movehome() {
 
 
 
-
+//#############################################################
+//                    컬러피커
+//#############################################################
 var picker = new CP(document.getElementById("co"));
 
 function onChange(r, g, b, a) {

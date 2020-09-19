@@ -38,6 +38,10 @@ quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(v
 
 #### 2020-09-18
 
-- Undo기능 추가(= 오류덩어리)
-- 펜 ColorPicker 추가
-- 배경채우기 색상 및 UI 수정
+- Undo기능 추가(= 오류덩어리).
+- 펜 ColorPicker 추가.
+- 배경채우기 색상 및 UI 수정.
+
+#### 2020-09-19
+
+- 펜 사이즈 User가 직접 설정 가능하도록 Range바 추가. (Min=1,Max=50,Step=1)
