@@ -15,7 +15,7 @@
 <%
     String src = "";
     String num = "";
-    String id = "";
+    String answerid = "";
     String answer = "";
     String score = "";
     String dbid = "alpacao";
@@ -41,13 +41,13 @@
         rs = pstmt.executeQuery();
         rs.next();
 
-        num = rs.getString("num");
-        id = rs.getString("id");
-        src = rs.getString("src");
-        answer = rs.getString("answer");
+        num = rs.getString("num"); //문제 번호
+        answerid = rs.getString("id"); //출제자 아이디
+        src = rs.getString("src"); //이미지 Path
+        answer = rs.getString("answer"); //정답
         
         
-        sql = "select * from userinfo where id = '"+session.getAttribute("id")+"'";
+        sql = "select * from userinfo where id = '"+session.getAttribute("id")+"'"; //내 세션정보로 내 스코어 로드.
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         rs.next();
@@ -101,6 +101,13 @@
             <input type="submit" style="display: none;"/>
       </form>
       <div style="width: 300px; height: 30px; background-color:aquamarine;">
+      출제자: 
+      <%
+        out.print("  " +answerid);
+%>
+
+    </div>
+      <div style="width: 300px; height: 30px; background-color:aquamarine;">
       현재 내 스코어: 
       <%
         out.print("  " +score);
@@ -108,12 +115,22 @@
 
     </div>
 <br><br>
-<button onclick="movehome()">홈으로</button>    
+<button onclick="movehome()">홈으로</button>   
+<button onclick="illegal()">그림 신고</button> 
     </center>
 
     <script>
     function movehome() {
       location.href="index.jsp";
     }
-    
+
+    function illegal()
+    {
+      //picture : 피신고자 아이디
+      //num : 그림번호
+      //src : 그림경로
+      location.href = "illegal.jsp?pictureid=<%out.print(answerid);%>&num=<%out.print(num);%>&myid=<%out.print(session.getAttribute("id"));%>&src=<%out.print(src);%>;"
+    }
+
+
     </script>

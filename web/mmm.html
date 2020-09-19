@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="date" id="s1" name="s1"> 
+<input type="date" id="s2" name="s2"> 
+<button id ="t" name="t" onclick="two()">두개짜리</button>    <br>
+
+
+<input type="date" id="s3" name="s3"> 
+<input type="date" id="s4" name="s4"> 
+<input type="date" id="s5" name="s5"> 
+<button id ="y" name="y" onclick="three()">세개짜리</button>    <br>
+
+
+<div id="bb" name="bb" style="float: left; width: 100%; height: 100%; ">
+
+</div>
+<script>
+function da(){
+    console.log(document.getElementById("dd").value);
+}
+
+
+function two(){
+    var start = document.getElementById("s1").value;
+    start = document.getElementById("s1").value.slice(2,4) + '년' + document.getElementById("s1").value.slice(5,7) + '/' + document.getElementById("s1").value.slice(8,10)
+    var end = document.getElementById("s2").value.slice(2,4) + '년' + document.getElementById("s2").value.slice(5,7) + '/' + document.getElementById("s2").value.slice(8,10)
+    console.log(document.getElementById("s1").value);
+    console.log(document.getElementById("s2").value);
+
+   var news = document.createElement("div");
+   news.innerHTML = '-------------<br>' + start + '<br>' + end + '<br>';
+    var point = document.getElementById("bb");
+    point.appendChild(news);
+
+
+}
+
+
+
+function three(){
+    var start = document.getElementById("s3").value.slice(2,4) + '년' + document.getElementById("s3").value.slice(5,7) + '/' + document.getElementById("s3").value.slice(8,10)
+    var middle = document.getElementById("s4").value.slice(2,4) + '년' + document.getElementById("s4").value.slice(5,7) + '/' + document.getElementById("s4").value.slice(8,10)
+    var end = document.getElementById("s5").value.slice(2,4) + '년' + document.getElementById("s5").value.slice(5,7) + '/' + document.getElementById("s5").value.slice(8,10)
+
+   var news = document.createElement("div");
+   news.innerHTML = '------------<br>' + start + '<br>'+ middle+'<br>' + end + '<br>';
+    var point = document.getElementById("bb");
+    point.appendChild(news);
+
+
+}
+
+
+
+</script>
+</body>
+</html>
