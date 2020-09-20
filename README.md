@@ -8,6 +8,33 @@
 
 다음 문제 이동(viewquize.jsp) 및 해당 계정 스코어 +1;
 
+# Page Structure
+
+### Page
+
+- register.html : 회원 가입 페이지
+- regcheck.jsp : 회원 가입 검증 페이지
+- login.jsp : 로그인 페이지
+- logincheck.jsp : 로그인 검증 페이지
+- index.jsp : 로그인 후 메인 페이지
+- canvas.jsp : 그림 제작 페이지
+- send.jsp : 그림 제작 검증 페이지
+- viewquize.jsp : 문제 제출 페이지
+- answercheck.jsp : 제출한 문제 검증 페이지
+- illegal.jsp : 그림 신고 페이지
+- report.jsp : 신고 제출 검증 페이지
+- mobile404.html : 모바일로 그림제작 접근 시 리턴되는 페이지
+- fun.js : 그리기 등 주요 JS 함수 페이지
+- css.css : CSS
+- logout.jsp : 로그아웃 페이지
+  <br><br><br>
+
+### JAVA
+
+- idcheck.java : 회원 가입시 아이디 중복 검사 JAVA 함수
+- Savefile.java : 문제 제출시 파일로 만들어서 저장 해주는 JAVA 함수
+- Sha.java : 회원가입 및 로그인시 패스워드 암호화 해주는 JAVA 함수
+
 # DB Structure
 
 imagedata [id(varchar(30)),src(longtext),num(int),answer(varchar(30))] //이미지 저장 공간
@@ -61,8 +88,24 @@ time(datetime),result(varchar(10)),manager(varchar(20)),src(varchar(50))] //부�
 - 로그인시 관리자 여부 체크.
 - 부적절 그림 신고 기능 관리자 페이지 추가.
 
-관리자페이지<br>
-![관리자Page](gitimg/gitimg1.PNG)
+<br><br><br><br>
 
-관리자페이지<br>
-![관리자Page](./gitimg/gitimg2.PNG)
+메인 페이지<br>
+![메인Page](./gitimg/gitimg2.PNG)
+<br><br><br><br>
+
+관리자 페이지<br>
+![관리자Page](gitimg/gitimg1.PNG)
+<br><br><br><br>
+
+그림 제작 페이지<br>
+![관리자Page](gitimg/gitimg3.PNG)
+<br><br><br><br>
+
+문제 맞추기 페이지<br>
+![관리자Page](gitimg/gitimg4.PNG)
+<br><br><br><br>
+
+신고 페이지<br>
+![관리자Page](gitimg/gitimg5.PNG)
+<br><br><br><br>
