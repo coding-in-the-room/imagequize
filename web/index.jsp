@@ -10,9 +10,23 @@
     <link rel="stylesheet" href="css.css" type="text/css">
   </head>
   <body>
-  <% if(session.getAttribute("id") == null) {
+  <% if(session.getAttribute("id") == null) 
+  {
     response.sendRedirect("login.jsp");   //세션 확인.
-}
+  }
+if(session.getAttribute("admin") == "1")
+  { //관리자 확인시 관리자페이지 버튼 SHow.
+  %>
+
+ <center>
+  <button
+  style="width: 500px; height: 150px;   "
+        onclick="manager()">
+    관리자 페이지
+  </button> 
+  </center>
+  <%
+  }
 
 
 
@@ -126,5 +140,8 @@
   }
   function shop() {
     location.href = "shop.jsp";
+  }
+  function manager() {
+    location.href = "manager.jsp?id=<%out.print(session.getAttribute("id"));%>"
   }
 </script>

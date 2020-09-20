@@ -14,11 +14,13 @@ imagedata [id(varchar(30)),src(longtext),num(int),answer(varchar(30))] //이미�
 
 userinfo [id(varchar(30)),pw(varchar(30)),score(int)] //User 정보 저장 공간
 
-quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(varchar(30)),result(varchar(4)),time(datetime)] //퀴즈 정답 제출 로그 저장 공간
+quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(varchar(30)),result(varchar(4)),time(datetime)]
+
+//퀴즈 정답 제출 로그 저장 공간
 
 illegalpicture [num(int),reporter varchar(30),illegaluser varchar(30),quizenum int,reason varchar(30),
 
-time(datetime),result(varchar(10),manager(varchar(20)))] //부적절 그림 신고 내역
+time(datetime),result(varchar(10)),manager(varchar(20)),src(varchar(50))] //부적절 그림 신고 내역
 
 # Update Log
 
@@ -53,3 +55,14 @@ time(datetime),result(varchar(10),manager(varchar(20)))] //부적절 그림 신�
 - 펜 사이즈 User가 직접 설정 가능하도록 Range바 추가. (Min=1,Max=50,Step=1)
 - 문제에 출제자 표시.
 - 부적절 그림 신고기능 추가.
+
+#### 2020-09-20
+
+- 로그인시 관리자 여부 체크.
+- 부적절 그림 신고 기능 관리자 페이지 추가.
+
+관리자페이지<br>
+![관리자Page](gitimg/gitimg1.png)
+
+관리자페이지<br>
+![관리자Page](./gitimg/gitimg2.png)

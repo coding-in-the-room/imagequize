@@ -31,7 +31,21 @@
     try {
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
-        String sql = "select count(*) as cnt from "+tablename +" where id=? and pw=?";
+
+        String sql = "select count(*) as cnt from admin where permission=?"; //관리자 여부 체크.
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, id);
+        rs = pstmt.executeQuery();
+        rs.next();
+        if(rs.getString("cnt").equals("1"))
+        {
+            session.setAttribute("admin","1"); //세션으로 관리자 인증값 전달.
+            
+
+        }
+        
+
+        sql = "select count(*) as cnt from "+tablename +" where id=? and pw=?";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, id);
         pstmt.setString(2, pw);

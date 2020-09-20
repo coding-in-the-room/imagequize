@@ -32,11 +32,12 @@
     PreparedStatement pstmt = null;
     try {
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
-        pstmt = conn.prepareStatement("insert into illegalpicture (reporter,illegaluser,quizenum,reason,time) values(?,?,?,?,now()) ");
+        pstmt = conn.prepareStatement("insert into illegalpicture (reporter,illegaluser,quizenum,reason,time,src) values(?,?,?,?,now(),?) ");
         pstmt.setString(1, userid);
         pstmt.setString(2, pictureuserid);
         pstmt.setString(3, picturenum);
         pstmt.setString(4,reason);
+        pstmt.setString(5,src);
         pstmt.executeUpdate(); //쿼리 Excute. 실제 쿼리 실행부분
 
         %>
