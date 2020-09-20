@@ -62,7 +62,7 @@ time(datetime),result(varchar(10)),manager(varchar(20)),src(varchar(50))] //부�
 - 부적절 그림 신고 기능 관리자 페이지 추가.
 
 관리자페이지<br>
-![관리자Page](gitimg/gitimg1.png)
+![관리자Page](gitimg/gitimg1.PNG)
 
 관리자페이지<br>
-![관리자Page](./gitimg/gitimg2.png)
+![관리자Page](./gitimg/gitimg2.PNG)
