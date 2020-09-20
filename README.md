@@ -13,7 +13,8 @@
 imagedata [id(varchar(30)),src(longtext),num(int),answer(varchar(30))] //이미지 저장 공간
 userinfo [id(varchar(30)),pw(varchar(30)),score(int)] //User 정보 저장 공간
 quizelog [num(int),id(varchar(30)),quizenum(int),userinput(varchar(30)),answer(varchar(30)),result(varchar(4)),time(datetime)] //퀴즈 정답 제출 로그 저장 공간
-illegalpicture [num(int),reporter varchar(30),illegaluser varchar(30),quizenum int,reason varchar(30), time(datetime)] //부적절 그림 신고 내역
+illegalpicture [num(int),reporter varchar(30),illegaluser varchar(30),quizenum int,reason varchar(30),
+time(datetime),result(varchar(10),manager(varchar(20)))] //부적절 그림 신고 내역
 
 # Update Log
 
