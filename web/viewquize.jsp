@@ -27,11 +27,6 @@
     ResultSet rs = null;
     PreparedStatement pstmt = null;
 
-    
-
-
-
-
     try {
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
@@ -45,8 +40,7 @@
         answerid = rs.getString("id"); //출제자 아이디
         src = rs.getString("src"); //이미지 Path
         answer = rs.getString("answer"); //정답
-        
-        
+
         sql = "select * from userinfo where id = '"+session.getAttribute("id")+"'"; //내 세션정보로 내 스코어 로드.
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
