@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="example.*" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="Func.Sha" %>
+<%@ page import="func.Sha" %>
 <html>
 <head>
     <title>logincheck</title>

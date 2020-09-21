@@ -1,4 +1,4 @@
-package Func;
+package func;
 import java.security.*;
 public class Sha {
 

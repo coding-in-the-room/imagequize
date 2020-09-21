@@ -13,7 +13,7 @@
 
 <body>
 
-  <% if(session.getAttribute("id") == null) {
+<% if(session.getAttribute("id") == null) {
     response.sendRedirect("login.jsp");
 }%>
 <%
@@ -21,15 +21,13 @@
     String url = request.getParameter("ss");
     String answer = request.getParameter("answer");
     String id = (String)session.getAttribute("id");
-   
 
     Savefile s = new Savefile();
     Date now = new Date();
     SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddhhmmss");
     String filename = sf.format(now)+id+".png";
     Savefile.img.decodeStringtoFile(url.substring(22),"tomcat/webapps/img/"+filename);
-
-  Class.forName("com.mysql.jdbc.Driver");
+    Class.forName("com.mysql.jdbc.Driver");
     Connection conn = null;
     PreparedStatement pstmt = null;
     try {
@@ -39,39 +37,32 @@
         pstmt.setString(2, filename);
         pstmt.setString(3,answer);
         pstmt.executeUpdate(); //쿼리 Excute. 실제 쿼리 실행부분
-
-        %>
+%>
 <script>
     alert("문제를 제출했어요!!!")
     location.href="index.jsp"
-    </script>
+</script>
 
-        <%
-
-
-                } catch (SQLException e) {
-                    out.print(e);
-                    e.printStackTrace();
-                } finally {
-
-                    if (pstmt != null)
-                        try {
-                            pstmt.close();
-                        } catch (Exception e) {
-                            out.print(e);
-                        }
-                    if (conn != null)
-                        try {
-                            conn.close();
-                        } catch (Exception e) {
-                            out.print(e);
-
-                        }
+<%
+    } catch (SQLException e) {
+        out.print(e);
+        e.printStackTrace();
+    } finally {
+        if (pstmt != null)
+            try {
+                pstmt.close();
+            } catch (Exception e) {
+                out.print(e);
+            }
+        if (conn != null)
+            try {
+                conn.close();
+            } catch (Exception e) {
+                out.print(e);
+            }
+    }
+%>
 
 
-                }
-    %>
-    
-    
-    </body>
-    </html>
+</body>
+</html>

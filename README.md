@@ -88,6 +88,10 @@ time(datetime),result(varchar(10)),manager(varchar(20)),src(varchar(50))] //부�
 - 로그인시 관리자 여부 체크.
 - 부적절 그림 신고 기능 관리자 페이지 추가.
 
+#### 2020-09-21
+
+- 관라자 페이지 블라인드 기능 추가.
+
 <br><br><br><br>
 
 메인 페이지<br>

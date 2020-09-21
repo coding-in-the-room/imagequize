@@ -23,9 +23,9 @@
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alpacao?useUnicode=true&characterEncoding=utf-8", "alpacao", "alpaca16");
 
-        String sql = "select * from illegalpicture"; //관리자 여부 체크.
+        String sql = "select * from illegalpicture order by num desc"; //관리자 여부 체크.
         pstmt = conn.prepareStatement(sql);
-        
+        String id = request.getParameter("id");
         rs = pstmt.executeQuery();
         String num,reporter,illegaluser,reason,src,result,manager;
         while(rs.next()){
@@ -41,8 +41,8 @@
         
   //  if(rs.getString("cnt").equals("1"))
   %>
-
-    <table class="table table-striped" style="width: 800px; text-align: center">
+<center>
+    <table class="table table-striped" style="width: 1200px; text-align: center">
       <tr>
         <td>산고번호</td>
         <td>신고자</td>
@@ -61,9 +61,10 @@
         <td><img style="width:150px; height:100px;" src="http://alpacao.cafe24.com/img/<%out.print(src);%>"></td>
         <td><%out.print(result);%></td>
         <td><%out.print(manager);%></td>
-        <td><button class="btn btn-info" onclick="blind(<%out.print(num);%>)">이미지 삭제</button></td>
+        <td><button class="btn btn-info" onclick="blind('<%out.print(src);%>',<%out.print(num);%>,'<%out.print(id);%>')"> 이미지 삭제 </button></td>
       </tr>
     </table>
+</center>
   </body>
 </html>
 
@@ -94,3 +95,9 @@ catch (SQLException e) {
                 
     }
                 %>
+
+                <script>
+  function blind(img,n,id) {
+    location.href = "remove.jsp?img=" + img + "&num=" + n + "&id=" + id;
+  }
+</script>

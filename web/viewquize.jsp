@@ -129,7 +129,7 @@
       //picture : 피신고자 아이디
       //num : 그림번호
       //src : 그림경로
-      location.href = "illegal.jsp?pictureid=<%out.print(answerid);%>&num=<%out.print(num);%>&myid=<%out.print(session.getAttribute("id"));%>&src=<%out.print(src);%>;"
+      location.href = "illegal.jsp?pictureid=<%out.print(answerid);%>&num=<%out.print(num);%>&myid=<%out.print(session.getAttribute("id"));%>&src=<%out.print(src);%>"
     }
 
 

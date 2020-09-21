@@ -1,4 +1,4 @@
-package Func;
+package func;
 
 import sun.misc.BASE64Decoder;
 

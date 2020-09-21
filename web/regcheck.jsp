@@ -9,8 +9,8 @@
 </head>
 <body>
 <%@ page import = "java.sql.*, java.util.*" %>
-<%@ page import="Func.Sha" %>
-<%@ page import="Func.Idcheck" %>
+<%@ page import="func.Sha" %>
+<%@ page import="func.Idcheck" %>
 <%
 
     String id = request.getParameter("id");
