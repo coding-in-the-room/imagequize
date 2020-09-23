@@ -12,7 +12,7 @@
     <script src="fun.js" charset="UTF-8"></script>
   </head>
   <body >
-    <% if(session.getAttribute("id") == null) { //세션 확인
+    <% if(session.getAttribute("id") == null) { //세션 Check.
     response.sendRedirect("login.jsp");
 }%>
     <center>

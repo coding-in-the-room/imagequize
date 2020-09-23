@@ -22,14 +22,12 @@ public class Savefile {
 
 
         public static void decodeStringtoFile(String encodesString, String outputFileName) throws IOException {
-
             BASE64Decoder base64Decoder = new BASE64Decoder();
             InputStream inStream = new ByteArrayInputStream(encodesString.toString().getBytes("UTF-8"));
             BufferedOutputStream outStream = new BufferedOutputStream(new FileOutputStream(outputFileName));
             base64Decoder.decodeBuffer(inStream, outStream);
             inStream.close();
             outStream.close();
-
         }
 
 
